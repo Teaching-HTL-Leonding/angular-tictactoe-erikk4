@@ -1,0 +1,25 @@
+<div id="tictactoe">
+  <p>{{ information }}</p>
+  <table>
+    <tbody>
+      <tr *ngFor="let row of [0, 1, 2]; let rowIndex = index">
+        <td
+          *ngFor="let col of [0, 1, 2]; let colIndex = index"
+          style="
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: center;
+            cursor: pointer;
+          "
+          (click)="handleCellClick(rowIndex, colIndex)"
+        >
+          {{ cells[rowIndex][colIndex] }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>{{ feedback }}</p>
+  <button (click)="resetGame()">Restart game</button>
+</div>
